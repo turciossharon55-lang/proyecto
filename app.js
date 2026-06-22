@@ -1,31 +1,31 @@
 const peliculas = [
   {
-    titulo: "Amor en la Nube",
-    categoria: "Romance / Cloud",
+    titulo: "cositas ricas",
+    categoria: "Romance / rico",
     descripcion: "Una historia donde todo el contenido se guarda y se entrega desde la nube.",
     icono: "☁️"
   },
   {
-    titulo: "Nodos de Medianoche",
-    categoria: "Suspenso / Distribuido",
+    titulo: "cositas aun mas ricas",
+    categoria: "Suspenso / muajajaja",
     descripcion: "Varios nodos trabajan juntos para mantener la plataforma activa.",
     icono: "🌐"
   },
   {
-    titulo: "Estrellas del Catálogo",
+    titulo: "Estrellotas del Catálogo",
     categoria: "Drama / Catálogo",
     descripcion: "El servicio de catálogo organiza películas, series, portadas y categorías.",
     icono: "⭐"
   },
   {
-    titulo: "Reproducción Rosa",
+    titulo: "hola",
     categoria: "Streaming / Video",
     descripcion: "Simulación del servicio encargado de reproducir contenido multimedia.",
     icono: "▶️"
   },
   {
-    titulo: "Fallo Imposible",
-    categoria: "Acción / Tolerancia a fallos",
+    titulo: "Telematica la mejor carrera",
+    categoria: "Acción / Tolerancia",
     descripcion: "Aunque un servidor falle, otros servicios siguen funcionando.",
     icono: "🛡️"
   },
@@ -36,14 +36,14 @@ const peliculas = [
     icono: "📈"
   },
   {
-    titulo: "Cache de Amor",
-    categoria: "Comedia / Cache",
+    titulo: "hola de nuevo",
+    categoria: "Comedia / bai",
     descripcion: "Guarda datos frecuentes para que la plataforma responda más rápido.",
     icono: "💚"
   },
   {
-    titulo: "CDN Global",
-    categoria: "Aventura / CDN",
+    titulo: "no votar basura",
+    categoria: "Aventura / nono",
     descripcion: "Los videos se entregan desde servidores cercanos al usuario.",
     icono: "🚀"
   }
