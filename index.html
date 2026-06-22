@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>StreamCloud | Plataforma Distribuida</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <header class="hero">
+    <nav class="navbar">
+      <h2 class="logo">StreamCloud</h2>
+      <ul class="nav-links">
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#sistema">Sistema</a></li>
+        <li><a href="#arquitectura">Arquitectura</a></li>
+        <li><a href="#caracteristicas">Características</a></li>
+        <li><a href="#demo">Demo</a></li>
+      </ul>
+    </nav>
+
+    <section id="inicio" class="hero-content">
+      <h1>StreamCloud</h1>
+      <p>
+        Plataforma de streaming distribuida inspirada en Netflix, diseñada para
+        ofrecer contenido multimedia de forma rápida, escalable, disponible y
+        tolerante a fallos.
+      </p>
+      <a href="#demo" class="btn">Ver prototipo</a>
+    </section>
+  </header>
+
+  <main>
+
+    <section class="section" id="introduccion">
+      <h2>Introducción</h2>
+      <p>
+        StreamCloud es una propuesta de plataforma de streaming distribuida que
+        permite a los usuarios acceder a películas, series y contenido multimedia
+        desde diferentes dispositivos conectados a internet.
+      </p>
+      <p>
+        A diferencia de una plataforma centralizada, StreamCloud divide sus
+        funciones en varios servicios conectados entre sí, como usuarios,
+        catálogo, reproducción, recomendaciones, almacenamiento y notificaciones.
+      </p>
+    </section>
+
+    <section class="section cards-section" id="objetivos">
+      <h2>Objetivos del proyecto</h2>
+
+      <div class="cards">
+        <article class="card">
+          <h3>Objetivo general</h3>
+          <p>
+            Diseñar una plataforma de streaming distribuida inspirada en Netflix,
+            que permita ofrecer contenido multimedia de manera eficiente,
+            escalable, disponible y tolerante a fallos.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Objetivos específicos</h3>
+          <ul>
+            <li>Describir el funcionamiento de una plataforma de streaming distribuida.</li>
+            <li>Identificar problemas de un sistema centralizado.</li>
+            <li>Proponer una arquitectura basada en microservicios.</li>
+            <li>Aplicar escalabilidad, replicación y disponibilidad.</li>
+            <li>Presentar una interfaz visual del sistema.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="sistema">
+      <h2>Descripción del sistema</h2>
+      <p>
+        El sistema permite que los usuarios puedan crear una cuenta, iniciar
+        sesión, seleccionar un perfil, revisar un catálogo de contenido, buscar
+        películas o series, recibir recomendaciones y simular la reproducción de
+        videos.
+      </p>
+
+      <div class="services-grid">
+        <div class="service">Autenticación</div>
+        <div class="service">Usuarios</div>
+        <div class="service">Catálogo</div>
+        <div class="service">Reproducción</div>
+        <div class="service">Recomendaciones</div>
+        <div class="service">Notificaciones</div>
+      </div>
+    </section>
+
+    <section class="section problem">
+      <h2>Problemática actual</h2>
+      <p>
+        En una plataforma centralizada, gran parte del funcionamiento depende de
+        un solo servidor. Esto puede causar lentitud, errores o caídas cuando
+        muchos usuarios intentan acceder al sistema al mismo tiempo.
+      </p>
+
+      <div class="problem-list">
+        <div>
+          <h3>Servidor saturado</h3>
+          <p>Un solo servidor recibe demasiadas solicitudes.</p>
+        </div>
+        <div>
+          <h3>Punto único de falla</h3>
+          <p>Si falla el servidor principal, toda la plataforma puede dejar de funcionar.</p>
+        </div>
+        <div>
+          <h3>Difícil escalabilidad</h3>
+          <p>Agregar recursos puede ser complicado y costoso.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="arquitectura">
+      <h2>Arquitectura del sistema</h2>
+      <p>
+        StreamCloud utiliza una arquitectura distribuida basada en clientes,
+        balanceador de carga, API Gateway, microservicios, bases de datos
+        replicadas, almacenamiento en la nube y CDN.
+      </p>
+
+      <div class="architecture">
+        <div>Usuario / Cliente</div>
+        <span>↓</span>
+        <div>Interfaz Web o Móvil</div>
+        <span>↓</span>
+        <div>Balanceador de carga</div>
+        <span>↓</span>
+        <div>API Gateway</div>
+        <span>↓</span>
+        <div>Microservicios</div>
+        <span>↓</span>
+        <div>Base de datos principal</div>
+        <span>↓</span>
+        <div>Bases de datos replicadas</div>
+        <span>↓</span>
+        <div>Almacenamiento en la nube</div>
+        <span>↓</span>
+        <div>CDN / Servidores de contenido</div>
+      </div>
+    </section>
+
+    <section class="section" id="caracteristicas">
+      <h2>Características distribuidas implementadas</h2>
+
+      <div class="features">
+        <article>
+          <h3>Escalabilidad</h3>
+          <p>Permite agregar más servidores cuando aumenta la cantidad de usuarios.</p>
+        </article>
+
+        <article>
+          <h3>Tolerancia a fallos</h3>
+          <p>El sistema puede seguir funcionando aunque un servicio presente errores.</p>
+        </article>
+
+        <article>
+          <h3>Replicación</h3>
+          <p>La información importante se mantiene copiada en varias bases de datos.</p>
+        </article>
+
+        <article>
+          <h3>Comunicación entre nodos</h3>
+          <p>Los microservicios se comunican mediante API Gateway y conexiones internas.</p>
+        </article>
+
+        <article>
+          <h3>Disponibilidad</h3>
+          <p>La plataforma busca estar accesible la mayor parte del tiempo.</p>
+        </article>
+
+        <article>
+          <h3>Cache distribuido</h3>
+          <p>Guarda información frecuente para responder más rápido.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section technologies">
+      <h2>Tecnologías propuestas</h2>
+
+      <div class="tech-list">
+        <span>GitHub</span>
+        <span>HTML</span>
+        <span>CSS</span>
+        <span>JavaScript</span>
+        <span>Docker</span>
+        <span>Cloud</span>
+        <span>CDN</span>
+        <span>Microservicios</span>
+        <span>Base de datos replicada</span>
+        <span>Balanceador de carga</span>
+      </div>
+    </section>
+
+    <section class="section demo" id="demo">
+      <h2>Prototipo visual</h2>
+      <p>
+        Esta sección simula una interfaz básica de StreamCloud, donde el usuario
+        puede ver contenido del catálogo y seleccionar una película o serie.
+      </p>
+
+      <div class="profile-box">
+        <h3>Perfil activo</h3>
+        <p id="perfilActivo">Carlos</p>
+        <button onclick="cambiarPerfil()">Cambiar perfil</button>
+      </div>
+
+      <h3 class="catalog-title">Catálogo de contenido</h3>
+
+      <div class="catalog" id="catalogo"></div>
+
+      <div class="player" id="reproductor">
+        <h3>Reproductor</h3>
+        <p>Selecciona una película o serie para simular la reproducción.</p>
+      </div>
+    </section>
+
+    <section class="section conclusion">
+      <h2>Conclusión</h2>
+      <p>
+        StreamCloud demuestra cómo una plataforma de streaming puede beneficiarse
+        de los sistemas distribuidos. Gracias a su arquitectura basada en
+        microservicios, replicación, balanceo de carga y disponibilidad, el sistema
+        puede ofrecer una experiencia más estable, rápida y preparada para crecer.
+      </p>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>StreamCloud - Proyecto de Sistemas Distribuidos</p>
+    <p>UNAN-León | Ingeniería en Telemática</p>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
