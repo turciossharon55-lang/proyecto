@@ -6,198 +6,172 @@
   <title>StreamCloud</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
-
 <body>
 
-  <header id="inicio">
-    <div class="stars-bg"></div>
-
-    <nav>
+  <header class="hero" id="inicio">
+    <nav class="navbar">
       <div class="logo">StreamCloud</div>
 
       <ul>
-        <li><a href="#catalogo">Inicio</a></li>
-        <li><a href="#catalogo">Películas</a></li>
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#catalogo">Catálogo</a></li>
         <li><a href="#reproductor">Reproductor</a></li>
         <li><a href="#arquitectura">Sistema</a></li>
       </ul>
 
-      <button class="nav-btn">Entrar</button>
+      <button class="login-btn">Entrar</button>
     </nav>
 
-    <div class="hero">
-      <div class="hero-text">
-        <span class="label">★ Streaming online ★</span>
+    <section class="hero-content">
+      <p class="tag">★ Streaming online ★</p>
 
-        <h1>Películas y series para ver cuando quieras</h1>
+      <h1>Películas y series para ver cuando quieras</h1>
 
-        <p>
-          StreamCloud es una plataforma de streaming inspirada en Netflix,
-          con catálogo, perfiles y reproducción simulada. Por dentro usa una
-          idea de sistema distribuido para que el servicio sea rápido y estable.
-        </p>
+      <p class="hero-text">
+        StreamCloud es una plataforma de streaming inspirada en Netflix,
+        donde podés explorar contenido, elegir perfiles y simular la
+        reproducción de películas o series.
+      </p>
 
-        <div class="hero-actions">
-          <a href="#catalogo" class="btn-main">▶ Ver catálogo</a>
-          <a href="#reproductor" class="btn-light">Ir al reproductor</a>
-        </div>
+      <div class="hero-buttons">
+        <a href="#catalogo" class="btn-primary">▶ Ver catálogo</a>
+        <a href="#reproductor" class="btn-secondary">Ir al reproductor</a>
       </div>
-
-      <div class="preview">
-        <div class="screen">
-          <div class="screen-top">
-            <span class="pill">Catálogo activo</span>
-            <span class="pill">Online</span>
-          </div>
-
-          <div class="play-circle">▶</div>
-
-          <div class="screen-bottom">
-            <h3>StreamCloud</h3>
-            <p>Una interfaz sencilla para simular una plataforma de streaming.</p>
-            <div class="rating">★★★★★</div>
-          </div>
-        </div>
-      </div>
-    </div>
+    </section>
   </header>
 
-  <section class="profiles">
-    <div class="section-title">
-      <div>
-        <h2>Elige un perfil</h2>
-        <p>Selecciona cómo querés entrar a la plataforma.</p>
-      </div>
-    </div>
+  <main>
 
-    <div class="profiles-grid">
-      <div class="profile active" onclick="selectProfile(this, 'Principal')">
-        <div class="avatar">🌸</div>
-        <h3>Principal</h3>
-      </div>
+    <section class="profiles">
+      <h2>Elige un perfil</h2>
 
-      <div class="profile" onclick="selectProfile(this, 'Familia')">
-        <div class="avatar">💚</div>
-        <h3>Familia</h3>
-      </div>
+      <div class="profile-container">
+        <div class="profile-card active" onclick="seleccionarPerfil('Principal')">
+          <div class="avatar">🌸</div>
+          <p>Principal</p>
+        </div>
 
-      <div class="profile" onclick="selectProfile(this, 'Kids')">
-        <div class="avatar">⭐</div>
-        <h3>Kids</h3>
-      </div>
+        <div class="profile-card" onclick="seleccionarPerfil('Familia')">
+          <div class="avatar">💚</div>
+          <p>Familia</p>
+        </div>
 
-      <div class="profile" onclick="selectProfile(this, 'Invitado')">
-        <div class="avatar">🎬</div>
-        <h3>Invitado</h3>
-      </div>
-    </div>
-  </section>
+        <div class="profile-card" onclick="seleccionarPerfil('Kids')">
+          <div class="avatar">⭐</div>
+          <p>Kids</p>
+        </div>
 
-  <section class="catalog" id="catalogo">
-    <div class="section-title">
-      <div>
-        <h2>Películas populares</h2>
-        <p>Contenido de ejemplo para mostrar cómo se vería el catálogo.</p>
-      </div>
-    </div>
-
-    <div class="movie-grid" id="movieGrid"></div>
-  </section>
-
-  <section class="player-section" id="reproductor">
-    <div class="player" id="player">
-      <div class="video-box">
-        <div class="video-icon">▶</div>
-      </div>
-
-      <div class="player-info">
-        <h2>Selecciona algo para ver</h2>
-        <p>
-          Aquí aparecerá la película o serie que elijas del catálogo.
-        </p>
-
-        <div class="rating">★★★★★</div>
-
-        <div class="status">
-          <span>Disponible</span>
-          <span>Rápido</span>
-          <span>Seguro</span>
-          <span>En línea</span>
+        <div class="profile-card" onclick="seleccionarPerfil('Invitado')">
+          <div class="avatar">🎬</div>
+          <p>Invitado</p>
         </div>
       </div>
-    </div>
-  </section>
 
-  <section class="architecture" id="arquitectura">
-    <div class="section-title">
-      <div>
-        <h2>Cómo funciona por dentro</h2>
+      <p class="perfil-activo">
+        Perfil activo: <span id="perfilActual">Principal</span>
+      </p>
+    </section>
+
+    <section class="section" id="catalogo">
+      <div class="section-header">
+        <h2>Catálogo popular</h2>
+        <p>Contenido disponible dentro de StreamCloud.</p>
+      </div>
+
+      <div class="movie-grid" id="movieGrid"></div>
+    </section>
+
+    <section class="player-section" id="reproductor">
+      <div class="player-box" id="playerBox">
+        <div class="screen">
+          <span>▶</span>
+        </div>
+
+        <div class="player-info">
+          <h2>Selecciona algo para ver</h2>
+          <p>
+            Aquí aparecerá la película o serie que elijas del catálogo.
+          </p>
+          <div class="stars">★★★★★</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="arquitectura">
+      <div class="section-header">
+        <h2>Cómo funciona StreamCloud</h2>
         <p>
-          Aunque la página es una simulación, representa una plataforma dividida
-          en varias partes: usuarios, catálogo, reproducción, almacenamiento y CDN.
+          La plataforma representa una idea de sistema distribuido: el usuario
+          entra, la solicitud pasa por un balanceador, luego por una API Gateway
+          y después llega a los servicios internos.
         </p>
       </div>
-    </div>
 
-    <div class="flow">
-      <div class="flow-card">Usuario</div>
-      <div class="flow-card">Balanceador</div>
-      <div class="flow-card">API Gateway</div>
-      <div class="flow-card">Servicios</div>
-      <div class="flow-card">Base de datos</div>
-      <div class="flow-card">Cloud / CDN</div>
-    </div>
-  </section>
-
-  <section class="services" id="servicios">
-    <div class="section-title">
-      <div>
-        <h2>Partes del sistema</h2>
-        <p>Servicios principales que tendría StreamCloud por dentro.</p>
+      <div class="flow">
+        <div class="flow-card">Usuario</div>
+        <span>→</span>
+        <div class="flow-card">Balanceador</div>
+        <span>→</span>
+        <div class="flow-card">API Gateway</div>
+        <span>→</span>
+        <div class="flow-card">Servicios</div>
+        <span>→</span>
+        <div class="flow-card">Cloud / CDN</div>
       </div>
-    </div>
+    </section>
 
-    <div class="services-grid">
-      <article class="service-card">
-        <div class="icon">🔐</div>
-        <h3>Inicio de sesión</h3>
-        <p>Permite entrar con una cuenta y mantener la sesión activa.</p>
-      </article>
+    <section class="section" id="servicios">
+      <div class="section-header">
+        <h2>Partes del sistema</h2>
+        <p>
+          Estos son los servicios principales que tendría la plataforma por dentro,
+          según la propuesta del documento. 
+        </p>
+      </div>
 
-      <article class="service-card">
-        <div class="icon">👤</div>
-        <h3>Perfiles</h3>
-        <p>Organiza los usuarios, gustos y contenido visto.</p>
-      </article>
+      <div class="service-grid">
+        <article class="service-card">
+          <div class="icon">🔐</div>
+          <h3>Inicio de sesión</h3>
+          <p>Permite que el usuario entre a la plataforma de forma segura.</p>
+        </article>
 
-      <article class="service-card">
-        <div class="icon">🎞️</div>
-        <h3>Catálogo</h3>
-        <p>Muestra películas, series, categorías y portadas.</p>
-      </article>
+        <article class="service-card">
+          <div class="icon">👤</div>
+          <h3>Perfiles</h3>
+          <p>Guarda los perfiles, gustos y preferencias de cada usuario.</p>
+        </article>
 
-      <article class="service-card">
-        <div class="icon">▶</div>
-        <h3>Reproducción</h3>
-        <p>Simula el contenido que el usuario decide ver.</p>
-      </article>
+        <article class="service-card">
+          <div class="icon">🎬</div>
+          <h3>Catálogo</h3>
+          <p>Muestra películas, series, categorías y contenido disponible.</p>
+        </article>
 
-      <article class="service-card">
-        <div class="icon">⭐</div>
-        <h3>Recomendaciones</h3>
-        <p>Sugiere contenido parecido a lo que el usuario suele ver.</p>
-      </article>
+        <article class="service-card">
+          <div class="icon">▶</div>
+          <h3>Reproducción</h3>
+          <p>Simula la reproducción del contenido seleccionado.</p>
+        </article>
 
-      <article class="service-card">
-        <div class="icon">☁️</div>
-        <h3>Cloud y CDN</h3>
-        <p>Representa el almacenamiento y entrega rápida del contenido.</p>
-      </article>
-    </div>
-  </section>
+        <article class="service-card">
+          <div class="icon">⭐</div>
+          <h3>Recomendaciones</h3>
+          <p>Sugiere contenido parecido a lo que el usuario podría ver.</p>
+        </article>
+
+        <article class="service-card">
+          <div class="icon">☁️</div>
+          <h3>Cloud y CDN</h3>
+          <p>Ayuda a entregar el contenido de forma más rápida y estable.</p>
+        </article>
+      </div>
+    </section>
+
+  </main>
 
   <footer>
-    StreamCloud · Prototipo visual de plataforma de streaming
+    <p>StreamCloud · Prototipo visual de plataforma de streaming</p>
   </footer>
 
   <script src="app.js"></script>
